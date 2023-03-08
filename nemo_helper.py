@@ -5,7 +5,7 @@ import json
 import shutil
 
 
-def create_config():
+def create_config(path):
     data_dir = "./"
     DOMAIN_TYPE = "telephonic"  # Can be meeting or telephonic based on domain type of the audio file
     CONFIG_FILE_NAME = f"diar_infer_{DOMAIN_TYPE}.yaml"
@@ -21,7 +21,7 @@ def create_config():
     os.makedirs(data_dir, exist_ok=True)
 
     meta = {
-        "audio_filepath": "mono_file.wav",
+        "audio_filepath": path,
         "offset": 0,
         "duration": None,
         "label": "infer",
